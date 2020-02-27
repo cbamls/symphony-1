@@ -108,7 +108,11 @@
     <button onclick="window.location.replace('${forwardURL}')">确定</button>
 </div>
 <div>
+<<<<<<< HEAD
     <a href="https://github.com/cbamls/AI_Tutorial">GitHub</a> &nbsp;
+=======
+    <a href="https://github.com/88250/symphony">GitHub</a> &nbsp;
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
     <a href="https://b3log.org/" target="_blank" rel="noopener">B3log</a>
 </div>
 <script>

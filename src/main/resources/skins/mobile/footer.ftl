@@ -43,7 +43,11 @@
 </div>
 <script src="${staticServePath}/js/symbol-defs${miniPostfix}.js?${staticResourceVersion}"></script>
 <script src="${staticServePath}/js/lib/compress/libs.min.js?${staticResourceVersion}"></script>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/vditor@2.2.10/dist/index.min.js"></script>
+=======
+<script src="https://cdn.jsdelivr.net/npm/vditor@2.2.11/dist/index.min.js"></script>
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 <script src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}"></script>
 <script>
   var Label = {

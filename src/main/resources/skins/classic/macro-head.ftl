@@ -24,12 +24,20 @@
 <title>${title}</title>
 <#nested>
 <link rel="preconnect" href="${staticServePath}">
+<<<<<<< HEAD
 <meta name="copyright" content="AIQ" />
+=======
+<meta name="copyright" content="B3log" />
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 <meta http-equiv="Window-target" content="_top" />
 <link rel="stylesheet" href="${staticServePath}/css/responsive.css?${staticResourceVersion}" />
 <link rel="stylesheet" href="${staticServePath}/css/base.css?${staticResourceVersion}" />
 <link rel="icon" type="image/png" href="${staticServePath}/images/favicon.png" />
 <link rel="apple-touch-icon" href="${staticServePath}/images/faviconH.png">
+<<<<<<< HEAD
 <link rel="search" type="application/opensearchdescription+xml" title="AIQ" href="/opensearch.xml">
+=======
+<link rel="search" type="application/opensearchdescription+xml" title="Sym" href="/opensearch.xml">
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 ${siteVisitStatCode}
 </#macro>

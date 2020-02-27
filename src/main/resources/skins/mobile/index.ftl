@@ -126,7 +126,11 @@
 
     <div class="slogan">
         ${indexIntroLabel}&nbsp;
+<<<<<<< HEAD
         <a href="https://github.com/cbamls/AI_Tutorial" target="_blank">
+=======
+        <a href="https://github.com/88250/symphony" target="_blank">
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
             <svg><use xlink:href="#github"></use></svg></a>
     </div>
     <#include "footer.ftl">

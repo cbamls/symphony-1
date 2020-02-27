@@ -21,7 +21,11 @@
     <div class="wrapper">
         <div class="slogan">
         ${indexIntroLabel} &nbsp; &nbsp;
+<<<<<<< HEAD
             <a href="https://github.com/cbamls/AI_Tutorial" target="_blank" class="tooltipped tooltipped-n"
+=======
+            <a href="https://github.com/88250/symphony" target="_blank" class="tooltipped tooltipped-n"
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                aria-label="${siteCodeLabel}">
                 <svg class="icon-github">
                     <use xlink:href="#github"></use>
@@ -35,6 +39,7 @@
                 <a href="${servePath}/domains">${domainLabel}</a>
                 <a href="${servePath}/tags">${tagLabel}</a>
                 <a href="${servePath}/statistic">${dataStatLabel}</a>
+<<<<<<< HEAD
                 <a href="${servePath}/sitemap.xml">站点地图</a>
                 <script src="https://s13.cnzz.com/z_stat.php?id=1273310020&web_id=1273310020" language="JavaScript"></script>
                 <a href="http://www.miitbeian.gov.cn">鲁ICP备18016225号</a>
@@ -43,6 +48,8 @@
                     <#--${visionLabel}-->
                     AIQ-人工智能社区
                 </div>
+=======
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                 <div class="fn-right">
                 ${visionLabel}
                 </div>
@@ -53,7 +60,11 @@
                     <#if footerBeiAnHao != ''>
                         <a href="http://www.miitbeian.gov.cn/" target="_blank">${footerBeiAnHao}</a> •
                     </#if>
+<<<<<<< HEAD
                     © ${year} <a href="https://b3log.org" target="_blank">B3log 开源</a>
+=======
+                    © ${year} <a href="https://b3log.org" target="_blank">B3log 开源</a>旗下云南链滴科技有限公司版权所有 •
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                     <a href="https://sym.b3log.org" target="_blank">Sym</a>
                 ${version}
                 </div>
@@ -64,7 +75,11 @@
 
 <script src="${staticServePath}/js/symbol-defs${miniPostfix}.js?${staticResourceVersion}"></script>
 <script src="${staticServePath}/js/lib/compress/libs.min.js?${staticResourceVersion}"></script>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/vditor@2.2.10/dist/index.min.js"></script>
+=======
+<script src="https://cdn.jsdelivr.net/npm/vditor@2.2.11/dist/index.min.js"></script>
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 <script src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}"></script>
 <script>
     var Label = {

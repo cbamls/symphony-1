@@ -32,8 +32,13 @@
             <div class="wrapper verify">
                 <div class="verify-wrap">
                     <div class="form">
+<<<<<<< HEAD
 <#--                        <svg><use xlink:href="#logo"></use></svg>-->
                         <img src="images/log2.svg" />
+=======
+                        <svg><use xlink:href="#logo"></use></svg>
+
+>>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                         <div class="input-wrap">
                             <svg><use xlink:href="#userrole"></use></svg>
                             <input type="text" id="rpwdrUserName" value="${user.userName}" readonly="readonly" placeholder="${userNameLabel}" autocomplete="off" />
