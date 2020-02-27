@@ -38,7 +38,7 @@
                 <a href="${servePath}/sitemap.xml">站点地图</a>
                 <script src="https://s13.cnzz.com/z_stat.php?id=1273310020&web_id=1273310020" language="JavaScript"></script>
                 <a href="http://www.miitbeian.gov.cn">鲁ICP备18016225号</a>
-                <div class="fn-right">© 2018
+                <div class="fn-right">© 2020
                     <a rel="copyright" href="${servePath}" target="_blank">www.6aiq.com</a>
                     <#--${visionLabel}-->
                     AIQ-人工智能社区
@@ -64,11 +64,7 @@
 
 <script src="${staticServePath}/js/symbol-defs${miniPostfix}.js?${staticResourceVersion}"></script>
 <script src="${staticServePath}/js/lib/compress/libs.min.js?${staticResourceVersion}"></script>
-<<<<<<< HEAD
-<script src="https://cdn.jsdelivr.net/npm/vditor@2.2.10/dist/index.min.js"></script>
-=======
 <script src="https://cdn.jsdelivr.net/npm/vditor@2.2.11/dist/index.min.js"></script>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 <script src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}"></script>
 <script>
     var Label = {
