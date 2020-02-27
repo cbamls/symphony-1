@@ -1610,9 +1610,6 @@ public class ArticleQueryService {
             ret = StringUtils.substringBetween(imgs[i], "data-src=\"", "\"");
             if (StringUtils.isBlank(ret)) {
                 ret = StringUtils.substringBetween(imgs[i], "src=\"", "\"");
-                if (flagHowGen) {
-                    ret += "?imageView2/1/w/" + 180 + "/h/" + 135 + "/format/jpg/interlace/1/q";
-                }
             }
 
             if (!StringUtils.containsIgnoreCase(ret, ".ico")) {
@@ -1627,7 +1624,9 @@ public class ArticleQueryService {
             final String qiniuDomain = Symphonys.UPLOAD_QINIU_DOMAIN;
             if (StringUtils.startsWith(ret, qiniuDomain)) {
                 ret = StringUtils.substringBefore(ret, "?");
-                ret += "?imageView2/1/w/" + 180 + "/h/" + 135 + "/format/jpg/interlace/1/q";
+                if (flagHowGen) {
+                    ret += "?imageView2/1/w/" + 680 + "/h/" + 350 + "/format/jpg/interlace/1/q";
+                }
             } else {
                 ret = "";
             }
