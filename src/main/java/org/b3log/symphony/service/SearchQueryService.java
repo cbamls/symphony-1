@@ -17,6 +17,7 @@
  */
 package org.b3log.symphony.service;
 
+import com.google.gson.Gson;
 import jodd.http.HttpRequest;
 import jodd.http.HttpResponse;
 import org.apache.logging.log4j.Level;
@@ -117,12 +118,18 @@ public class SearchQueryService {
             final HttpResponse response = HttpRequest.post(Symphonys.ES_SERVER + "/" + SearchMgmtService.ES_INDEX_NAME + "/" + type
                     + "/_search").bodyText(dsl).contentTypeJson().timeout(5000).send();
             response.charset("UTF-8");
+            LOGGER.warn("ES的响应1:" + response.bodyText());
+            LOGGER.warn("ES的响应:" + new Gson().toJson(response.bodyText()));
             return new JSONObject(response.bodyText());
         } catch (final Exception e) {
             LOGGER.log(Level.ERROR, "Queries failed", e);
 
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 
     String buildDSL(String keyword, int currPage, int size) {
