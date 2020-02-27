@@ -122,11 +122,7 @@
                             </ul>
                         </div>
                         <div class="fn-none ft-center">
-<<<<<<< HEAD
                             <a href="https://github.com/cbamls/AI_Tutorial" target="_blank"><img src="${staticServePath}/images/sym-logo300.png" width="180px"></a> <br/> <br/><br/><br/>
-=======
-                            <a href="https://github.com/88250/symphony" target="_blank"><img src="${staticServePath}/images/sym-logo300.png" width="180px"></a> <br/> <br/><br/><br/>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                             <iframe src="https://ghbtns.com/github-btn.html?user=88250&repo=symphony&type=star&count=true&size=large" frameborder="0" scrolling="0" width="130px" height="30px"></iframe>
                         </div>
                         <div class="fn-none list">

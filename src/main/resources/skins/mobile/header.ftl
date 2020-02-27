@@ -22,12 +22,8 @@
         <div class="head-fn fn-left">
             <h1>
                 <a href="${servePath}" aria-label="${symphonyLabel}">
-<<<<<<< HEAD
                     <img style="height: 30px;float: left" src="${servePath}/images/logo.png" alt="人工智能"/>
                     <img style="max-width: 70%; float: left" src="${servePath}/images/aiq.png" alt="人工智能"/>
-=======
-                    <svg><use xlink:href="#logo"></use></svg>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                 </a>
             </h1>
         </div>

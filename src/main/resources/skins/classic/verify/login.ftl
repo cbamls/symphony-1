@@ -33,7 +33,6 @@
             <div class="wrapper verify">
                 <div class="verify-wrap">
                     <div class="form">
-<<<<<<< HEAD
 <#--                        <svg><use xlink:href="#logo"></use></svg>-->
                         <img src="images/log2.svg" />
                         <div id="githubLogin" style="display: block">
@@ -73,31 +72,6 @@
                             <button class="green" onclick="Verify.login('${goto}')">${loginLabel}</button>
                             <button class="green" onclick="Verify.changeLoginType('github')">改用github登录</button>
                         </div>
-=======
-                        <svg><use xlink:href="#logo"></use></svg>
-                        <div class="input-wrap">
-                            <svg><use xlink:href="#userrole"></use></svg>
-                            <input id="nameOrEmail" type="text" autofocus="autofocus" placeholder="${nameOrEmailLabel}" autocomplete="off" />
-                        </div>
-                        <div class="input-wrap">
-                            <svg><use xlink:href="#locked"></use></svg>
-                            <input type="password" id="loginPassword" placeholder="${passwordLabel}" />
-                        </div>
-                        <div class="fn-none input-wrap">
-                            <img id="captchaImg" class="captcha-img fn-pointer" />
-                            <input type="text" id="captchaLogin" class="captcha-input" placeholder="${captchaLabel}" />
-                        </div>
-
-                        <div class="fn-clear">
-                            <div class="fn-hr5"></div>
-                            <input type="checkbox" id="rememberLogin" checked /> ${rememberLoginStatusLabel}
-                            <a href="${servePath}/forget-pwd" class="fn-right">${forgetPwdLabel}</a>
-                            <div class="fn-hr5"></div>
-                        </div>
-                        
-                        <div id="loginTip" class="tip"></div>
-                        <button class="green" onclick="Verify.login('${goto}')">${loginLabel}</button>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                         <button onclick="Util.goRegister()">${registerLabel}</button>
                     </div>
                 </div>

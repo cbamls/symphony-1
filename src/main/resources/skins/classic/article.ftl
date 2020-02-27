@@ -55,15 +55,12 @@
         <meta name="twitter:url" content="${servePath}${article.articlePermalink}" />
         <meta name="twitter:site" content="@B3logOS" />
         <meta name="twitter:creator" content="@B3logOS" />
-<<<<<<< HEAD
         <style>
             .bor2 {
                 border: 1px dashed #F00;
                 margin-top: 10px
             }
         </style>
-=======
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
     </head>
     <body itemscope itemtype="http://schema.org/Product" class="article">
         <img itemprop="image" class="fn-none"  src="${article.articleAuthorThumbnailURL210}" />
@@ -155,7 +152,6 @@
                     <div id="articleAudio" data-url="${article.articleAudioURL}"
                          data-author="${article.articleAuthorName}" class="aplayer"></div>
                 </#if>
-<<<<<<< HEAD
 <#--                <#if 3 != article.articleType>-->
 <#--                    <div class="vditor-reset article-content">-->
 <#--                        ${article.articleContent}-->
@@ -221,22 +217,6 @@
                         with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
 
                 </div>
-
-=======
-                <#if 3 != article.articleType>
-                    <div class="vditor-reset article-content">
-                        ${article.articleContent}
-                    </div>
-                    <#else>
-                        <div id="thoughtProgress"><span class="bar"></span>
-                            <svg class="icon-video">
-                                <use xlink:href="#video"></use>
-                            </svg>
-                        </div>
-                        <div class="vditor-reset article-content" id="articleThought" data-author="${article.articleAuthorName}"
-                             data-link="${servePath}${article.articlePermalink}"></div>
-                </#if>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 
                 <#if 0 < article.articleRewardPoint>
                 <div id="articleRewardContent">
@@ -485,13 +465,9 @@
         <div class="article-header">
             <h1 aria-label="${symphonyLabel}" class="tooltipped tooltipped-s">
                 <a href="${servePath}">
-<<<<<<< HEAD
 <#--                    <svg><use xlink:href="#logo"></use></svg>-->
                     <img style="height: 40px" src="${servePath}/images/logo.png" alt="人工智能社区"/>
                     <img src="${servePath}/images/aiq2.png" alt="人工智能社区"/>
-=======
-                    <svg><use xlink:href="#logo"></use></svg>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                 </a>
             </h1>
             <h2 class="fn-ellipsis fn-pointer" onclick="Util.goTop()">

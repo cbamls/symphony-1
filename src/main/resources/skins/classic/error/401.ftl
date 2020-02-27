@@ -37,11 +37,7 @@
                         <button onclick="Util.goRegister()" class="green">${nowLabel}${registerLabel}</button>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                         ${indexIntroLabel} &nbsp; &nbsp;
-<<<<<<< HEAD
                         <a href="https://github.com/cbamls/AI_Tutorial" target="_blank" class="tooltipped tooltipped-n" aria-label="${siteCodeLabel}">
-=======
-                        <a href="https://github.com/88250/symphony" target="_blank" class="tooltipped tooltipped-n" aria-label="${siteCodeLabel}">
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                             <svg class="icon-github"><use xlink:href="#github"></use></svg></a> &nbsp;
                     </div>
                 </div>

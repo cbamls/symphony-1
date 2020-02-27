@@ -27,16 +27,12 @@
         </@head>
         <link rel="stylesheet" href="${staticServePath}/css/index.css?${staticResourceVersion}" />
         <link rel="canonical" href="${servePath}">
-<<<<<<< HEAD
         <link type="text/css" href="${staticServePath}/css/lunbo.css" rel="stylesheet" />
-=======
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
     </head>
     <body class="index">
         ${HeaderBannerLabel}
         <#include "header.ftl">
         <div class="main">
-<<<<<<< HEAD
             <div id="zSlider" style="margin-top: -5px;padding-left: 5%; display: flex;">
                 <div id="picshow">
                     <div id="picshow_img">
@@ -82,8 +78,6 @@
                     <p>请投递简历到 <a href="http://www.6aiq.com/forward?goto=mailto%3A88cbam%40gmail.com" target="_blank" rel="nofollow">88cbam@gmail.com</a></p>
                 </div>
             </div>
-=======
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
             <div class="wrapper">
                 <div class="index-main">
                     <div class="index-tabs fn-flex" id="articles">
@@ -281,12 +275,8 @@
             }, 800);
         });
     </script>
-<<<<<<< HEAD
         <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 
         <script type="text/javascript" src="${staticServePath}/js/lunbo.js"></script>
     </body>
-=======
-</body>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
 </html>

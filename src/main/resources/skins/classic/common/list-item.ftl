@@ -58,15 +58,11 @@
                     <#if article.articleAnonymous == 0>
                         <a rel="nofollow" class="author"
                            href="${servePath}/member/${article.articleAuthorName}"></#if>
-<<<<<<< HEAD
                             <#if article.articleAuthorNickName?? && article.articleAuthorNickName != ''>
                                 ${article.articleAuthorNickName}
                             <#else>
                                 ${article.articleAuthorName}
                             </#if>
-=======
-                    ${article.articleAuthorName}
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                     <#if article.articleAnonymous == 0></a></#if>
 
                     <#if article.articleAuthor.userIntro != '' && article.articleAnonymous == 0>
@@ -81,7 +77,6 @@
                     </#if>
                 </div>
             </div>
-<<<<<<< HEAD
 <#--            <#if isLoggedIn && 1 == currentUser.userListViewMode>-->
             <a class="abstract" href="${servePath}${article.articlePermalink}">
                 ${article.articlePreviewContent}
@@ -90,15 +85,6 @@
         </div>
 <#--        <#if "" != article.articleThumbnailURL && isLoggedIn && 1 == currentUser.userListViewMode>-->
         <#if "" != article.articleThumbnailURL>
-=======
-            <#if isLoggedIn && 1 == currentUser.userListViewMode>
-            <a class="abstract" href="${servePath}${article.articlePermalink}">
-                ${article.articlePreviewContent}
-            </a>
-            </#if>
-        </div>
-        <#if "" != article.articleThumbnailURL && isLoggedIn && 1 == currentUser.userListViewMode>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
             <a href="${servePath}${article.articlePermalink}" class="abstract-img" style="background-image:url('${article.articleThumbnailURL}')"></a>
         </#if>
     </div>

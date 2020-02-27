@@ -19,14 +19,9 @@
 -->
 <div class="nav">
     <h1 aria-label="${symphonyLabel}" class="tooltipped tooltipped-s">
-<<<<<<< HEAD
         <a href="${servePath}" style="outline: 0;color: black; text-decoration: none;">
             <img style="height: 40px;margin-top:4px" src="${servePath}/images/logo.png" alt="人工智能"/>
             <img style="margin-top:4px" src="${servePath}/images/aiq.png" alt="人工智能"/>
-=======
-        <a href="${servePath}">
-            <svg><use xlink:href="#logo"></use></svg>
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
         </a>
     </h1>
     <div class="nav-tabs">
@@ -49,15 +44,12 @@
             <svg>
                 <use xlink:href="#perfect"></use>
             </svg> ${perfectLabel}</a>
-<<<<<<< HEAD
         <a href="http://md.6aiq.com/" target="_blank">
             <svg>
                 <use xlink:href="#perfect"></use>
             </svg>
             <strong style="color: red">Markdown编辑器</strong>
         </a>
-=======
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
         <#if isLoggedIn && "" != currentUser.userCity>
         <a href="${servePath}/city/my"<#if selected?? && 'city' == selected> class="current"</#if>>
             <svg>
@@ -73,11 +65,7 @@
     </div>
     <#if esEnabled || algoliaEnabled>
     <form class="responsive-hide fn-left" target="_blank" action="/search">
-<<<<<<< HEAD
         <input class="search" placeholder="智能搜索..." type="text" name="key" id="search"
-=======
-        <input class="search" placeholder="Search Sym" type="text" name="key" id="search"
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
                value="<#if key??>${key}</#if>">
         <input type="submit" class="fn-none" value=""/>
     </form>
@@ -126,15 +114,12 @@
                 </ul>
             </div>
         <#else>
-<<<<<<< HEAD
             <a onclick="window.location='https://github.com/login/oauth/authorize?client_id=603d830f3705501acc91&redirect_uri=${servePath}/githubLoginCallback&scope=user:email'"
                class="unlogin">
                 <svg class="unlogin">
                     <use xlink:href="#github"></use>
                 </svg>
             </a>
-=======
->>>>>>> 2525d54555220aef6c1239c9794f2a8a9f30d353
             <a href="javascript: Util.goLogin();" class="unlogin">${loginLabel}</a>
             <a href="javascript:Util.goRegister()" class="unlogin">${registerLabel}</a>
         </#if>
