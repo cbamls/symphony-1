@@ -31,7 +31,7 @@
         <#include "../header.ftl">
         <div class="main post">
             <div class="fn-flex-1 fn-clear">
-                <input type="text" id="articleTitle" autocomplete="off" tabindex="1"<#if requisite> readonly disabled</#if>
+                <input type="text" id="articleTitle" style="width: 100%" autocomplete="off" tabindex="1"<#if requisite> readonly disabled</#if>
                        value="<#if article??>${article.articleTitle}</#if>" placeholder="${titleLabel}" />
                 <div class="post-article-content">
                     <div id="articleContent"
