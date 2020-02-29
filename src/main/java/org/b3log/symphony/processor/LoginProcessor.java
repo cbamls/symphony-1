@@ -574,7 +574,8 @@ public class LoginProcessor {
      */
     public void register(final RequestContext context) {
         context.renderJSON();
-        final JSONObject requestJSONObject = (JSONObject) context.attr(Keys.REQUEST);
+
+        final JSONObject requestJSONObject = context.getRequest().getJSON();
         final String name = requestJSONObject.optString(User.USER_NAME);
         final String email = requestJSONObject.optString(User.USER_EMAIL);
         final String invitecode = requestJSONObject.optString(Invitecode.INVITECODE);
