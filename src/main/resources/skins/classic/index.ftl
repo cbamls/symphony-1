@@ -38,7 +38,7 @@
                     <div id="picshow_img">
                         <ul>
                             <#list perfectArticles as article>
-                                <#if (article_index < 7)>
+                                <#if (article_index < 7) && article.articleThumbnailURLBig??>
                                     <li>
                                         <a href="${servePath}${article.articlePermalink}">
                                             <img style="width: 100%" src="${article.articleThumbnailURLBig}">
@@ -53,7 +53,7 @@
                     <div id="picshow_tx">
                         <ul>
                             <#list perfectArticles as article>
-                                <#if (article_index < 7)>
+                                <#if (article_index < 7) && article.articleThumbnailURLBig??>
                                     <li>
                                         <h3><a rel="nofollow" href="${servePath}/member/${article.articleAuthorName}">
                                                 <span class="avatar-small tooltipped tooltipped-se" aria-label="${article.articleAuthorName}" style="background-image:url('${article.articleAuthorThumbnailURL20}')"></span>
