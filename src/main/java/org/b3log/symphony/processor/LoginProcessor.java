@@ -206,7 +206,7 @@ public class LoginProcessor {
         String token = ret.split("&")[0];
 ///{"login":"cbamls","id":12781382,"node_id":"MDQ6VXNlcjEyNzgxMzgy","avatar_url":"https://avatars1.githubusercontent.com/u/12781382?v=4","gravatar_id":"","url":"https://api.github.com/users/cbamls","html_url":"https://github.com/cbamls","followers_url":"https://api.github.com/users/cbamls/followers","following_url":"https://api.github.com/users/cbamls/following{/other_user}","gists_url":"https://api.github.com/users/cbamls/gists{/gist_id}","starred_url":"https://api.github.com/users/cbamls/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cbamls/subscriptions","organizations_url":"https://api.github.com/users/cbamls/orgs","repos_url":"https://api.github.com/users/cbamls/repos","events_url":"https://api.github.com/users/cbamls/events{/privacy}","received_events_url":"https://api.github.com/users/cbamls/received_events","type":"User","site_admin":false,"name":"cbamls","company":"北京三块在线科技 ","blog":"www.6aiq.com","location":"望京","email":"88cbam@gmail.com","hireable":null,"bio":"www.liangshu.me","public_repos":50,"public_gists":3,"followers":20,"following":4,"created_at":"2015-06-07T04:39:42Z","updated_at":"2018-12-15T08:58:44Z"}
         String userJson = HttpUtils.sendGet("https://api.github.com/user?" + token + "");
-        System.out.println("userJson => " + userJson);
+        LOGGER.warn("用户登陆信息:" + userJson);
         Gson gson = new Gson();
         Map<String, Object> map = gson.fromJson(userJson, Map.class);
         String email = (String) map.get("email");
