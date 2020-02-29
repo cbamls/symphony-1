@@ -634,7 +634,8 @@ public class LoginProcessor {
 
         final Request request = context.getRequest();
         final Response response = context.getResponse();
-        final JSONObject requestJSONObject = (JSONObject) context.attr(Keys.REQUEST);
+        //final JSONObject requestJSONObject = (JSONObject) context.attr(Keys.REQUEST);
+        final JSONObject requestJSONObject = (JSONObject) context.getRequest().getJSON();
 
         final String password = requestJSONObject.optString(User.USER_PASSWORD); // Hashed
         final int appRole = requestJSONObject.optInt(UserExt.USER_APP_ROLE);
