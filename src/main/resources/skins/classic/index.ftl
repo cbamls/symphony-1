@@ -71,11 +71,11 @@
                     </div>
                 </div>
                 <div style="width: 40%; height: 20px; margin-left: 2%;">
-                    <h1 id="toc_h1_1"><a href="http://www.6aiq.com/forward?goto=" target="_blank" rel="nofollow"></a>美团搜索推荐方向 JD</h1>
-                    <h3 id="toc_h3_2"><a href="http://www.6aiq.com/forward?goto=" target="_blank" rel="nofollow"></a>（社招）</h3>
+                    <h1 id="toc_h1_1"><a href="https://www.6aiq.com/forward?goto=" target="_blank" rel="nofollow"></a>美团搜索推荐方向 JD</h1>
+                    <h3 id="toc_h3_2"><a href="https://www.6aiq.com/forward?goto=" target="_blank" rel="nofollow"></a>（社招）</h3>
                     <p>岗位要求：<br>●&nbsp;3 年以上研发工作经验，精通 Java、thrift、spring&nbsp;boot，熟悉面向对象与设计模式；<br>●&nbsp;有较大访问量 (QPS&gt;100) 的服务后台开发经验、在高性能、高吞吐方面有一定经验；<br>●&nbsp;有良好编程习惯，有代码洁癖，熟悉 JVM 基本原理和参数、性能调优；<br>●&nbsp;积极沟通，工作主动，愿意尝试新的技术领域。</p>
                     <p>加分项：<br>●&nbsp;有机器学习工程落地经验；<br>●&nbsp;搜索、推荐、计算广告等相关系统经验优先。</p>
-                    <p>请投递简历到 <a href="http://www.6aiq.com/forward?goto=mailto%3A88cbam%40gmail.com" target="_blank" rel="nofollow">88cbam@gmail.com</a></p>
+                    <p>请投递简历到 <a href="https://www.6aiq.com/forward?goto=mailto%3A88cbam%40gmail.com" target="_blank" rel="nofollow">88cbam@gmail.com</a></p>
                 </div>
             </div>
             <div class="wrapper">
