@@ -37,7 +37,7 @@
                 <a href="${servePath}/statistic">${dataStatLabel}</a>
                 <a href="${servePath}/sitemap.xml">站点地图</a>
                 <script src="https://s13.cnzz.com/z_stat.php?id=1273310020&web_id=1273310020" language="JavaScript"></script>
-                <a href="http://www.miitbeian.gov.cn">鲁ICP备18016225号</a>
+                <a href="http://www.beian.miit.gov.cn">鲁ICP备18016225号</a>
                 <div class="fn-right">© 2020
                     <a rel="copyright" href="${servePath}" target="_blank">www.6aiq.com</a>
                     <#--${visionLabel}-->
