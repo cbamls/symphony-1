@@ -190,33 +190,7 @@
                      <div class="vditor-reset article-content" id="articleThought" data-author="${article.articleAuthorName}"
                                              data-link="${servePath}${article.articlePermalink}"></div>
                 </#if>
-                <div style="right: 0px">
-                    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone"
-                                                                                                      data-cmd="qzone"
-                                                                                                      title="分享到QQ空间"></a><a
-                                href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_weixin"
-                                                                                               data-cmd="weixin"
-                                                                                               title="分享到微信"></a><a href="#"
-                                                                                                                    class="bds_tsina"
-                                                                                                                    data-cmd="tsina"
-                                                                                                                    title="分享到新浪微博"></a><a
-                                href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_tieba"
-                                                                                               data-cmd="tieba" title="分享到百度贴吧"></a><a
-                                href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a></div>
-                    <script>window._bd_share_config = {
-                            "common": {
-                                "bdSnsKey": {},
-                                "bdText": "",
-                                "bdMini": "2",
-                                "bdMiniList": false,
-                                "bdPic": "",
-                                "bdStyle": "1",
-                                "bdSize": "32"
-                            }, "share": {}
-                        };
-                        with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
-
-                </div>
+                <div class="bshare-custom icon-medium-plus"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到豆瓣" class="bshare-douban"></a><a title="分享到i贴吧" class="bshare-itieba"></a><a title="分享到有道笔记" class="bshare-youdaonote"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ好友" class="bshare-qqim"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 
                 <#if 0 < article.articleRewardPoint>
                 <div id="articleRewardContent">
