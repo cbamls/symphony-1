@@ -190,7 +190,6 @@
                      <div class="vditor-reset article-content" id="articleThought" data-author="${article.articleAuthorName}"
                                              data-link="${servePath}${article.articlePermalink}"></div>
                 </#if>
-                <div class="bshare-custom icon-medium-plus"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到豆瓣" class="bshare-douban"></a><a title="分享到i贴吧" class="bshare-itieba"></a><a title="分享到有道笔记" class="bshare-youdaonote"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ好友" class="bshare-qqim"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="https://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=3&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="https://static.bshare.cn/b/bshareC0.js"></script>
 
                 <#if 0 < article.articleRewardPoint>
                 <div id="articleRewardContent">
