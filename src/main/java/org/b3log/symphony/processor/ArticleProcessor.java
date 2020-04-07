@@ -638,7 +638,6 @@ public class ArticleProcessor {
                     "                    <li>本文地址：<a href=\"" + uri +"\">" + uri +
                     "</a> </li>\n" +
                     "                    <li>本文版权归作者和<a href=\"https://www.6aiq.com\">AIQ</a>共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出</li>\n" +
-                    "                    <li><a href=\"https://zhuanlan.zhihu.com/52aiq\"> 知乎专栏 点击关注 </a></li>\n" +
                     "                </ul><br>";
             StringBuilder builder = new StringBuilder(content).insert(start, str);
             article.put(Article.ARTICLE_CONTENT, builder.toString());
