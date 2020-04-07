@@ -1,4 +1,3 @@
-1,1           Top
 <#--
 
     Symphony - A modern community (forum/BBS/SNS/blog) platform written in Java.

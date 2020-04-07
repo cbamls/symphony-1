@@ -111,6 +111,7 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
+<script src="https://s13.cnzz.com/z_stat.php?id=1273310020&web_id=1273310020" language="JavaScript"></script>
 <script>
     (function(){
         var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
