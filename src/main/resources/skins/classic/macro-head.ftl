@@ -27,6 +27,7 @@
     <meta name="copyright" content="AIQ" />
     <meta http-equiv="Window-target" content="_top" />
     <meta name="google-site-verification" content="TC3gczXoPaeBYFrVeN_rVV0TPVTiQkwrwxXi0YAGIPk" />
+    <meta name="shenma-site-verification" content="3333fc66344df11cd9b0abdcf3562a6a_1586331317">
     <link rel="stylesheet" href="${staticServePath}/css/responsive.css?${staticResourceVersion}" />
     <link rel="stylesheet" href="${staticServePath}/css/base.css?${staticResourceVersion}" />
     <link rel="icon" type="image/png" href="${staticServePath}/images/favicon.png" />
