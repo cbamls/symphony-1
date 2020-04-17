@@ -215,7 +215,7 @@ public class TagCache {
                         new PropertyFilter(Tag.TAG_ICON_PATH, FilterOperator.NOT_EQUAL, ""),
                         new PropertyFilter(Tag.TAG_STATUS, FilterOperator.EQUAL, Tag.TAG_STATUS_C_VALID))).
                 setPage(1, Integer.MAX_VALUE).setPageCount(1).
-                addSort(Tag.TAG_RANDOM_DOUBLE, SortDirection.ASCENDING);
+                addSort(Tag.TAG_LINK_CNT, SortDirection.DESCENDING);
         try {
             final JSONObject result = tagRepository.get(query);
             final List<JSONObject> tags = CollectionUtils.jsonArrayToList(result.optJSONArray(Keys.RESULTS));
