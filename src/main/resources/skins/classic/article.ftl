@@ -175,7 +175,6 @@
                         <br>
                         <div class="bor2">
                             <a href="${servePath}/article/${article.oId}">本文地址：${servePath}/article/${article.oId}</a><br>
-                            <a href="https://zhuanlan.zhihu.com/52aiq"> 知乎专栏 点击关注 </a><br>
                             <strong>本文版权归作者和<a href="https://www.6aiq.com">AIQ</a>共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出</strong>
                         </div>
                         <br>
