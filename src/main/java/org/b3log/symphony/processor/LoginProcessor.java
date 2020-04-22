@@ -218,8 +218,12 @@ public class LoginProcessor {
 
         try {
             JSONObject user = null;
-            String userName = (String) map.get("login");
-            user = userQueryService.getUserByName(userName);
+            if (StringUtils.isBlank(email)) {
+                String userName = (String) map.get("login");
+                user = userQueryService.getUserByName(userName);
+            } else {
+                user = userQueryService.getUserByEmail(email);
+            }
             if (user == null) {
                 String userAvatarURL = (String) map.get("avatar_url");
                 String loginName = (String) map.get("login");
