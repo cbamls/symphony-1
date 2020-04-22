@@ -35,7 +35,7 @@ ${HeaderBannerLabel}
 <div class="main">
     <div class="wrapper">
         <div class="index-main">
-            <div id="zSlider" style="margin-top: -5px;">
+            <div id="zSlider">
                 <div id="picshow">
                     <div id="picshow_img">
                         <ul>
@@ -108,7 +108,7 @@ ${HeaderBannerLabel}
         </div>
         <div class="index-side">
             <#if !isLoggedIn>
-                <div style="margin-left: 10px;background-color: rgba(98,162,240,.1);width: 100%;box-sizing: border-box;">
+                <div style="background-color: rgba(98,162,240,.1);width: 100%;box-sizing: border-box;">
                     <div style="-webkit-box-flex: 1;flex: 2;min-width: 1px;padding: 50px;margin-bottom: 0px;">
                         <h2>
                             欢迎来到 <strong>AIQ</strong> - 专业的人工智能技术社区
@@ -118,8 +118,8 @@ ${HeaderBannerLabel}
                             我们正在构建一个小众的人工智能算法爱好者的社区，会分享很多人工智能在企业落地上的一些实践，大家在这里相互信任，以平等 • 自由 • 奔放的价值观进行分享交流。最终，希望大家能够找到与自己志同道合的伙伴，共同学习成长。
                         </div>
                         <br>
-                        <a href="https://6aiq.com/register" class="btn green">注册</a> &nbsp; &nbsp;
-                        <a href="https://6aiq.com/article/1542369214697" class="btn red">关于</a>
+                        <a href="https://www.6aiq.com/register" class="btn green">注册</a> &nbsp; &nbsp;
+                        <a href="https://www.6aiq.com/article/1542369214697" class="btn red">关于</a>
                     </div>
                     <div class="fn__flex-1 bg"></div>
                 </div>
