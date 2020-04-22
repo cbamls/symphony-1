@@ -207,18 +207,19 @@ public class LoginProcessor {
 ///{"login":"cbamls","id":12781382,"node_id":"MDQ6VXNlcjEyNzgxMzgy","avatar_url":"https://avatars1.githubusercontent.com/u/12781382?v=4","gravatar_id":"","url":"https://api.github.com/users/cbamls","html_url":"https://github.com/cbamls","followers_url":"https://api.github.com/users/cbamls/followers","following_url":"https://api.github.com/users/cbamls/following{/other_user}","gists_url":"https://api.github.com/users/cbamls/gists{/gist_id}","starred_url":"https://api.github.com/users/cbamls/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cbamls/subscriptions","organizations_url":"https://api.github.com/users/cbamls/orgs","repos_url":"https://api.github.com/users/cbamls/repos","events_url":"https://api.github.com/users/cbamls/events{/privacy}","received_events_url":"https://api.github.com/users/cbamls/received_events","type":"User","site_admin":false,"name":"cbamls","company":"北京三块在线科技 ","blog":"www.6aiq.com","location":"望京","email":"88cbam@gmail.com","hireable":null,"bio":"www.liangshu.me","public_repos":50,"public_gists":3,"followers":20,"following":4,"created_at":"2015-06-07T04:39:42Z","updated_at":"2018-12-15T08:58:44Z"}
         String userJson = HttpUtils.sendGet("https://api.github.com/user?" + token + "");
         LOGGER.warn("用户登陆信息:" + userJson);
+        if (userJson == null || userJson.equals("")) {
+            context.sendRedirect(Latkes.getServePath());
+            LOGGER.warn("没有拿到用户登陆信息:" + userJson);
+            return;
+        }
         Gson gson = new Gson();
         Map<String, Object> map = gson.fromJson(userJson, Map.class);
-        String email = (String) map.get("email");
+        String email = map.get("email") == null ? "" : map.get("email").toString();
 
         try {
             JSONObject user = null;
-            if (StringUtils.isBlank(email)) {
-                String userName = (String) map.get("login");
-                user = userQueryService.getUserByName(userName);
-            } else {
-                user = userQueryService.getUserByEmail(email);
-            }
+            String userName = (String) map.get("login");
+            user = userQueryService.getUserByName(userName);
             if (user == null) {
                 String userAvatarURL = (String) map.get("avatar_url");
                 String loginName = (String) map.get("login");
@@ -229,12 +230,12 @@ public class LoginProcessor {
                 }
                 JSONObject newUser = new JSONObject();
                 if (StringUtils.isBlank(email)) {
-                    email = loginName + "default@default.com";
+                    email = loginName + "@6aiq.com";
                     newUser.put(User.USER_EMAIL, email);
                 } else {
                     newUser.put(User.USER_EMAIL, email);
                 }
-                System.out.println("github登录用户的信息 => " + email + " " + userAvatarURL + " " + loginName + " " + userUrl);
+                LOGGER.info("github登录用户的信息 => " + email + " " + userAvatarURL + " " + loginName + " " + userUrl);
                 newUser.put(User.USER_NAME, loginName);
                 newUser.put(UserExt.USER_NICKNAME, nickName);
                 newUser.put(User.USER_EMAIL, email);
