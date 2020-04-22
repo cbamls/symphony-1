@@ -119,7 +119,7 @@ ${HeaderBannerLabel}
                         </div>
                         <br>
                         <a href="https://6aiq.com/register" class="btn green">注册</a> &nbsp; &nbsp;
-                        <a href="http://localhost:8080/article/1542369214697" class="btn red">关于</a>
+                        <a href="https://6aiq.com/article/1542369214697" class="btn red">关于</a>
                     </div>
                     <div class="fn__flex-1 bg"></div>
                 </div>
