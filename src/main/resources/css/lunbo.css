@@ -5,7 +5,6 @@ img {
 	border:0;
 }
 #zSlider {
-	width:90%;
 	margin-bottom: 10px;
 }
 #picshow {
@@ -13,7 +12,6 @@ img {
 }
 #picshow, #picshow_img {
 	height:350px;
-	width: 680px;
 }
 #picshow_img li {
 	height:350px;
