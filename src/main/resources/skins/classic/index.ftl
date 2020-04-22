@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <@head title="AIQ - 全国最专业的人工智能社区">
+        <@head title="AIQ - 全国最专业的人工智能社区,AI从业者聚集地">
         <meta name="description" content="${symDescriptionLabel}"/>
         </@head>
         <link rel="stylesheet" href="${staticServePath}/css/index.css?${staticResourceVersion}" />
