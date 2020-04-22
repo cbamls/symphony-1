@@ -50,7 +50,9 @@ import org.jsoup.parser.Parser;
 import org.jsoup.safety.Whitelist;
 import org.jsoup.select.Elements;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
@@ -1653,15 +1655,23 @@ public class ArticleQueryService {
         article.put(Common.CMT_TIME_AGO, Times.getTimeAgo(article.optLong(Article.ARTICLE_LATEST_CMT_TIME), Locales.getLocale()));
         final Date createDate = new Date(article.optLong(Article.ARTICLE_CREATE_TIME));
         article.put(Article.ARTICLE_CREATE_TIME, createDate);
+        article.put("createTimeUTC", utcTime(createDate));
         article.put(Article.ARTICLE_CREATE_TIME_STR, DateFormatUtils.format(createDate, "yyyy-MM-dd HH:mm:ss"));
         final Date updateDate = new Date(article.optLong(Article.ARTICLE_UPDATE_TIME));
         article.put(Article.ARTICLE_UPDATE_TIME, updateDate);
+        article.put("updateTimeUTC", utcTime(updateDate));
         article.put(Article.ARTICLE_UPDATE_TIME_STR, DateFormatUtils.format(updateDate, "yyyy-MM-dd HH:mm:ss"));
         final Date latestCmtDate = new Date(article.optLong(Article.ARTICLE_LATEST_CMT_TIME));
         article.put(Article.ARTICLE_LATEST_CMT_TIME, latestCmtDate);
         article.put(Article.ARTICLE_LATEST_CMT_TIME_STR, DateFormatUtils.format(latestCmtDate, "yyyy-MM-dd HH:mm:ss"));
     }
 
+    private String utcTime(Date date) {
+        TimeZone tz = TimeZone.getTimeZone("Asia/Shanghai");
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        df.setTimeZone(tz);
+        return df.format(date);
+    }
     /**
      * Generates the specified article author name and thumbnail URL.
      *

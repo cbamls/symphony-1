@@ -72,9 +72,9 @@
                     "name" : "${article.articleAuthorName}",
                     "url":"${servePath}/member/${article.articleAuthorName}"
                 },
-                "datePublished" : "${article.articleCreateTime}",
-                "dateModified": "${article.articleUpdateTime}",
-                "image" : ["${article.articleImg1URL}"],
+                "datePublished" : "${article.createTimeUTC}",
+                "dateModified": "${article.updateTimeUTC}",
+                "image" : ["${article.articleImg1URL}", "${article.articleThumbnailURLBig}"],
                 "url" : "${servePath}/article/${article.oId}",
                 "mainEntityOfPage":"${servePath}/article/${article.oId}",
                 "description": "${article.articlePreviewContent}",
