@@ -31,6 +31,33 @@
         </#if>
         </@head>
         <link rel="stylesheet" href="${staticServePath}/js/lib/compress/article.min.css?${staticResourceVersion}">
+        <!-- 由 Google 结构化数据标记助手生成的 JSON-LD 标记。 -->
+        <script type="application/ld+json">
+            {
+                "@context" : "http://schema.org",
+                "@type" : "Article",
+                "headline" : "${article.articleTitleEmojUnicode}",
+                "author" : {
+                    "@type" : "Person",
+                    "name" : "${article.articleAuthorName}",
+                    "url":"${servePath}/member/${article.articleAuthorName}"
+                },
+                "datePublished" : "${article.createTimeUTC}",
+                "dateModified": "${article.updateTimeUTC}",
+                "image" : ["${article.articleImg1URL}", "${article.articleThumbnailURLBig}"],
+                "url" : "${servePath}/article/${article.oId}",
+                "mainEntityOfPage":"${servePath}/article/${article.oId}",
+                "description": "${article.articlePreviewContent}",
+                "publisher":{
+                    "@type":"Organization",
+                     "name":"AIQ",
+                     "logo": {
+                          "@type": "ImageObject",
+                          "url": "https://www.6aiq.com/images/logo.png"
+                     }
+                 }
+            }
+        </script>
     </head>
     <body itemscope itemtype="http://schema.org/Product">
         <img itemprop="image" class="fn-none"  src="${staticServePath}/images/faviconH.png" />

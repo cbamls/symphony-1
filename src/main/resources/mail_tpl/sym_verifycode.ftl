@@ -109,13 +109,13 @@
                                                     </div>
                                                     <div style="border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#eee;margin-bottom:30px"></div>
                                                     <p align="left" style="font-size:18px;line-height:24px;color:#333;font-weight:bold;margin-top:0px;margin-bottom:18px;font-family:Helvetica,Arial,sans-serif">
-                                                        AIQ-机器学习大数据社区
+                                                        AIQ-人工智能社区
                                                     </p>
                                                     <div align="left" style="font-size:13px;line-height:20px;color:#444444;margin-top:0px;margin-bottom:18px;font-family:Helvetica,Arial,sans-serif">
                                                         <table>
                                                             <tbody><tr style="border-collapse:collapse">
                                                                 <td style="border-collapse:collapse;font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:20px;padding:0 0 15px">
-                                                                    我们正在构建一个活跃的先进的国内机器学习中文社区。大家在这里相互 信任 ，以 平等 • 自由 • 奔放 的价值观进行分享交流。
+                                                                    我们正在构建一个活跃的先进的国内人工智能中文社区。大家在这里相互 信任 ，以 平等 • 自由 • 奔放 的价值观进行分享交流。
                                                                     这里有汇聚国内顶尖的机器学习，人工智能，深度学习，区块链，神经网络，大数据，数据挖掘等火热领域等专家及各种优秀的学习资源。
                                                                     致力于打造国内最顶尖的技术交流社区
                                                                     <ul>
