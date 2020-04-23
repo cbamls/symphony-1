@@ -51,7 +51,8 @@ public final class Images {
 
         for (final String imgSrc : imgSrcs) {
             if (!StringUtils.startsWith(imgSrc, qiniuDomain) || StringUtils.contains(imgSrc, ".gif")
-                    || StringUtils.containsIgnoreCase(imgSrc, "?imageView2")) {
+                    || StringUtils.containsIgnoreCase(imgSrc, "?imageView2")
+                    || StringUtils.contains(imgSrc, ".svg")) {
                 continue;
             }
 
