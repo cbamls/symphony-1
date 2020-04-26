@@ -109,7 +109,7 @@ ${HeaderBannerLabel}
         <div class="index-side">
             <#if !isLoggedIn>
                 <div style="background-color: rgba(98,162,240,.1);width: 100%;box-sizing: border-box;">
-                    <div style="-webkit-box-flex: 1;flex: 2;min-width: 1px;padding: 50px;margin-bottom: 0px;">
+                    <div style="-webkit-box-flex: 1;flex: 2;min-width: 1px;padding: 50px;margin-bottom: 0px; padding-bottom: 20px;">
                         <h2>
                             欢迎来到 <strong>AIQ</strong> - 专业的人工智能技术社区
                         </h2>
@@ -118,8 +118,26 @@ ${HeaderBannerLabel}
                             我们正在构建一个小众的人工智能算法爱好者的社区，会分享很多人工智能在企业落地上的一些实践，大家在这里相互信任，以平等 • 自由 • 奔放的价值观进行分享交流。最终，希望大家能够找到与自己志同道合的伙伴，共同学习成长。
                         </div>
                         <br>
-                        <a href="https://www.6aiq.com/register" class="btn green">注册</a> &nbsp; &nbsp;
+                        <a href="https://www.6aiq.com/register" class="btn green">注册</a>
+                        <a onclick="window.location='https://github.com/login/oauth/authorize?client_id=603d830f3705501acc91&redirect_uri=${servePath}/githubLoginCallback&scope=user:email'"
+                           class="btn green">
+                            快速登陆
+                            <svg class="unlogin">
+                                <use xlink:href="#github"></use>
+                            </svg>
+                        </a>
                         <a href="https://www.6aiq.com/article/1542369214697" class="btn red">关于</a>
+                    </div>
+                    <div class="module" style="padding-bottom: 50px; margin-bottom: 0px">
+                        <div class="module-header">
+                            <h2>当前在线: ${visitors}， 刚加入的小伙伴:</h2>
+                        </div>
+                        <div class="module-panel index__user-panel" style="margin-left: 40px">
+                            <#list users as user>
+                                <span class="avatar index__user-avatar tooltipped tooltipped-se" href="https://www.6aiq.com/member/${user.oId}" aria-label="${user.userName}" style="background-image: url(&quot;${user.userAvatarURL48}&quot;);"></span>
+                            </#list>
+                            <span class="avatar index__user-avatar"> <h2 style="text-align: center">....</h2></span>
+                        </div>
                     </div>
                     <div class="fn__flex-1 bg"></div>
                 </div>

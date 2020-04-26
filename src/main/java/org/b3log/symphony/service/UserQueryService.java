@@ -531,7 +531,38 @@ public class UserQueryService {
             return null;
         }
     }
+    // 获取最近注册的用户
+    public JSONObject getLatestRegisterUsers(final JSONObject requestJSONObject) {
+        final JSONObject ret = new JSONObject();
 
+        final int currentPageNum = requestJSONObject.optInt(Pagination.PAGINATION_CURRENT_PAGE_NUM);
+        final int pageSize = requestJSONObject.optInt(Pagination.PAGINATION_PAGE_SIZE);
+        final Query query = new Query().addSort(Keys.OBJECT_ID, SortDirection.DESCENDING).setPage(currentPageNum, pageSize);
+
+        JSONObject result;
+        try {
+            result = userRepository.get(query);
+        } catch (final RepositoryException e) {
+            LOGGER.log(Level.ERROR, "getLatestRegisterUsers failed", e);
+
+            return null;
+        }
+
+        final JSONArray users = result.optJSONArray(Keys.RESULTS);
+        ret.put(User.USERS, users);
+
+        for (int i = 0; i < users.length(); i++) {
+            final JSONObject user = users.optJSONObject(i);
+            user.put(UserExt.USER_T_CREATE_TIME, new Date(user.optLong(Keys.OBJECT_ID)));
+
+            avatarQueryService.fillUserAvatarURL(user);
+
+            final JSONObject role = roleQueryService.getRole(user.optString(User.USER_ROLE));
+            user.put(Role.ROLE_NAME, role.optString(Role.ROLE_NAME));
+        }
+
+        return ret;
+    }
     /**
      * Gets users by the specified request json object.
      *

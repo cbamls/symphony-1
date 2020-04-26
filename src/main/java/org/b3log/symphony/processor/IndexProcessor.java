@@ -30,7 +30,9 @@ import org.b3log.latke.ioc.BeanManager;
 import org.b3log.latke.ioc.Inject;
 import org.b3log.latke.ioc.Singleton;
 import org.b3log.latke.model.Pagination;
+import org.b3log.latke.model.User;
 import org.b3log.latke.service.LangPropsService;
+import org.b3log.latke.util.CollectionUtils;
 import org.b3log.latke.util.Locales;
 import org.b3log.latke.util.Paginator;
 import org.b3log.latke.util.Stopwatchs;
@@ -39,10 +41,7 @@ import org.b3log.symphony.model.Common;
 import org.b3log.symphony.model.UserExt;
 import org.b3log.symphony.processor.middleware.AnonymousViewCheckMidware;
 import org.b3log.symphony.processor.middleware.LoginCheckMidware;
-import org.b3log.symphony.service.ArticleQueryService;
-import org.b3log.symphony.service.DataModelService;
-import org.b3log.symphony.service.UserMgmtService;
-import org.b3log.symphony.service.UserQueryService;
+import org.b3log.symphony.service.*;
 import org.b3log.symphony.util.Markdowns;
 import org.b3log.symphony.util.Sessions;
 import org.b3log.symphony.util.Symphonys;
@@ -102,6 +101,9 @@ public class IndexProcessor {
      */
     @Inject
     private LangPropsService langPropsService;
+
+    @Inject
+    private OptionQueryService optionQueryService;
 
     /**
      * Register request handlers.
@@ -294,7 +296,19 @@ public class IndexProcessor {
 
         dataModelService.fillHeaderAndFooter(context, dataModel);
         dataModelService.fillIndexTags(dataModel);
+        //*****自定义
+        final JSONObject requestJSONObject = new JSONObject();
+        requestJSONObject.put(Pagination.PAGINATION_CURRENT_PAGE_NUM, 1);
+        requestJSONObject.put(Pagination.PAGINATION_PAGE_SIZE, 8);
 
+        final JSONObject result = userQueryService.getLatestRegisterUsers(requestJSONObject);
+        dataModel.put(User.USERS, CollectionUtils.jsonArrayToList(result.optJSONArray(User.USERS)));
+
+        int totalOnline = optionQueryService.getAllOnlineUsers();
+        dataModel.put("visitors", totalOnline + new Random().nextInt(15) + 33 + "");
+        dataModel.put("totalUsers", "1241");
+
+        //*****
         dataModel.put(Common.SELECTED, Common.INDEX);
     }
 

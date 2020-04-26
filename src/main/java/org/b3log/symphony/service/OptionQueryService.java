@@ -82,6 +82,9 @@ public class OptionQueryService {
         return ret;
     }
 
+    public int getAllOnlineUsers() {
+        return ArticleChannel.SESSIONS.size() + ArticleListChannel.SESSIONS.size() + ChatroomChannel.SESSIONS.size() + getOnlineMemberCount();
+    }
     /**
      * Gets the online visitor count.
      *
