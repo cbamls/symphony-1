@@ -243,6 +243,8 @@ public class LoginProcessor {
                 newUser.put(User.USER_NAME, loginName);
                 newUser.put(UserExt.USER_NICKNAME, nickName);
                 newUser.put(User.USER_EMAIL, email);
+                newUser.put(UserExt.USER_POINT, 500);
+                newUser.put(UserExt.USER_STATUS, 0);
                 if (StringUtils.isNotBlank(userUrl)) {
                     newUser.put(User.USER_URL, userUrl);
                 }

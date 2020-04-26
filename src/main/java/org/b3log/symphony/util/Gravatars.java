@@ -59,7 +59,7 @@ public final class Gravatars {
             }
 
             final HttpResponse response = HttpRequest.get("http://www.gravatar.com/avatar/" + h + "?s=256&d=" + d[RandomUtils.nextInt(d.length)]).
-                    connectionTimeout(5000).timeout(5000).send();
+                    connectionTimeout(50000).timeout(50000).send();
             if (200 != response.statusCode()) {
                 LOGGER.log(Level.WARN, "Gets avatar data failed [sc=" + response.statusCode() + "]");
 
