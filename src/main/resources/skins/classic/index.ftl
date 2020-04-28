@@ -55,7 +55,7 @@ ${HeaderBannerLabel}
                     <div id="picshow_tx">
                         <ul>
                             <#list perfectArticles as article>
-                                <#if (article_index < 7) && article.articleThumbnailURLBig??>
+                                <#if (article_index >= 7) && article.articleThumbnailURLBig??>
                                     <li>
                                         <h3><a rel="nofollow" href="${servePath}/member/${article.articleAuthorName}">
                                                 <span class="avatar-small tooltipped tooltipped-se"
@@ -125,7 +125,7 @@ ${HeaderBannerLabel}
                             <svg class="unlogin">
                                 <use xlink:href="#github"></use>
                             </svg>
-                        </a>
+                        </a>&nbsp;
                         <a href="https://www.6aiq.com/article/1542369214697" class="btn red">关于</a>
                     </div>
                     <div class="module" style="padding-bottom: 50px; margin-bottom: 0px">
@@ -134,7 +134,7 @@ ${HeaderBannerLabel}
                         </div>
                         <div class="module-panel index__user-panel" style="margin-left: 40px">
                             <#list users as user>
-                                <span class="avatar index__user-avatar tooltipped tooltipped-se" href="https://www.6aiq.com/member/${user.oId}" aria-label="${user.userName}" style="background-image: url(&quot;${user.userAvatarURL48}&quot;);"></span>
+                                <a class="avatar index__user-avatar tooltipped tooltipped-se" href="https://www.6aiq.com/member/${user.userName}" aria-label="${user.userName}" style="background-image: url(&quot;${user.userAvatarURL48}&quot;);"></a>
                             </#list>
                             <span class="avatar index__user-avatar"> <h2 style="text-align: center">....</h2></span>
                         </div>
