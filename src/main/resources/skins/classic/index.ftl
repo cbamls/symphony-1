@@ -55,7 +55,7 @@ ${HeaderBannerLabel}
                     <div id="picshow_tx">
                         <ul>
                             <#list perfectArticles as article>
-                                <#if (article_index >= 7) && article.articleThumbnailURLBig??>
+                                <#if (article_index < 7) && article.articleThumbnailURLBig??>
                                     <li>
                                         <h3><a rel="nofollow" href="${servePath}/member/${article.articleAuthorName}">
                                                 <span class="avatar-small tooltipped tooltipped-se"
@@ -151,18 +151,20 @@ ${HeaderBannerLabel}
             <div class="perfect-panel list">
                 <ul>
                     <#list perfectArticles as article>
-                        <li>
-                            <a rel="nofollow" href="${servePath}/member/${article.articleAuthorName}">
-                                <span class="avatar-small tooltipped tooltipped-se"
-                                      aria-label="${article.articleAuthorName}"
-                                      style="background-image:url('${article.articleAuthorThumbnailURL48}')"></span>
-                            </a>
-                            <a rel="nofollow" class="fn-ellipsis ft-a-title"
-                               href="${servePath}${article.articlePermalink}">${article.articleTitleEmoj}</a>
-                            <a class="fn-right count ft-gray ft-smaller"
-                               href="${servePath}${article.articlePermalink}"><#if article.articleViewCount < 1000>
-                                    ${article.articleViewCount}<#else>${article.articleViewCntDisplayFormat}</#if></a>
-                        </li>
+                        <#if (article_index >= 7)>
+                            <li>
+                                <a rel="nofollow" href="${servePath}/member/${article.articleAuthorName}">
+                                    <span class="avatar-small tooltipped tooltipped-se"
+                                          aria-label="${article.articleAuthorName}"
+                                          style="background-image:url('${article.articleAuthorThumbnailURL48}')"></span>
+                                </a>
+                                <a rel="nofollow" class="fn-ellipsis ft-a-title"
+                                   href="${servePath}${article.articlePermalink}">${article.articleTitleEmoj}</a>
+                                <a class="fn-right count ft-gray ft-smaller"
+                                   href="${servePath}${article.articlePermalink}"><#if article.articleViewCount < 1000>
+                                        ${article.articleViewCount}<#else>${article.articleViewCntDisplayFormat}</#if></a>
+                            </li>
+                        </#if>
                     </#list>
                     <#if perfectArticles?size == 0>
                         <li>${chickenEggLabel}</li>
