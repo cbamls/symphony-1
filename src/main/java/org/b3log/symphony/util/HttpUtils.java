@@ -17,6 +17,11 @@
  */
 package org.b3log.symphony.util;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -120,4 +125,25 @@ public class HttpUtils {
         }
         return buffer.toString();
     }
+    public static Response httpPost(String url, RequestBody requestBody) {
+        OkHttpClient client = new OkHttpClient();
+        Request request=new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .addHeader("Content-Type", "application/json")
+                .build();
+        Response response = null;
+        try {
+            response = client
+                    .newCall(request)
+                    .execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (response.isSuccessful()) {
+            return response;
+        }
+        return null;
+    }
+
 }

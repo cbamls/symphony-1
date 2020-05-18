@@ -114,7 +114,7 @@
                 </ul>
             </div>
         <#else>
-            <a onclick="window.location='https://github.com/login/oauth/authorize?client_id=603d830f3705501acc91&redirect_uri=${servePath}/githubLoginCallback&scope=user:email'"
+            <a onclick="window.location='https://github.com/login/oauth/authorize?client_id=603d830f3705501acc91&redirect_uri=${servePath}/githubLoginCallback&state=3&scope=user:email'"
                class="unlogin">
                 <svg class="unlogin">
                     <use xlink:href="#github"></use>

@@ -17,7 +17,11 @@
  */
 package org.b3log.symphony.processor;
 
+import com.google.common.collect.Maps;
 import com.google.gson.Gson;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.time.DateUtils;
@@ -50,6 +54,7 @@ import org.b3log.symphony.util.HttpUtils;
 import org.b3log.symphony.util.Sessions;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -202,19 +207,51 @@ public class LoginProcessor {
 
         String code = context.getRequest().getParameter("code");
         String gotoUrl = context.getRequest().getHeader("referer");
-        String ret = HttpUtils.sendPost("https://github.com/login/oauth/access_token?client_id=603d830f3705501acc91&client_secret=969a7a02b0d327feebdaa6be42c50f7783b602b1&code=" + code + "&redirect_uri=" + Latkes.getServePath() +"/githubLoginCallback", null);
-        String token = ret.split("&")[0];
-        LOGGER.info("token => " + token);
-///{"login":"cbamls","id":12781382,"node_id":"MDQ6VXNlcjEyNzgxMzgy","avatar_url":"https://avatars1.githubusercontent.com/u/12781382?v=4","gravatar_id":"","url":"https://api.github.com/users/cbamls","html_url":"https://github.com/cbamls","followers_url":"https://api.github.com/users/cbamls/followers","following_url":"https://api.github.com/users/cbamls/following{/other_user}","gists_url":"https://api.github.com/users/cbamls/gists{/gist_id}","starred_url":"https://api.github.com/users/cbamls/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cbamls/subscriptions","organizations_url":"https://api.github.com/users/cbamls/orgs","repos_url":"https://api.github.com/users/cbamls/repos","events_url":"https://api.github.com/users/cbamls/events{/privacy}","received_events_url":"https://api.github.com/users/cbamls/received_events","type":"User","site_admin":false,"name":"cbamls","company":"北京三块在线科技 ","blog":"www.6aiq.com","location":"望京","email":"88cbam@gmail.com","hireable":null,"bio":"www.liangshu.me","public_repos":50,"public_gists":3,"followers":20,"following":4,"created_at":"2015-06-07T04:39:42Z","updated_at":"2018-12-15T08:58:44Z"}
-        String userJson = HttpUtils.sendGet("https://api.github.com/user?" + token + "");
-        LOGGER.warn("用户登陆信息:" + userJson);
-        if (userJson == null || userJson.equals("")) {
-            context.sendRedirect(Latkes.getServePath());
-            LOGGER.warn("没有拿到用户登陆信息:" + userJson);
+        MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        Map<String, String> param = Maps.newHashMap();
+        param.put("code", code);
+        param.put("client_id", "603d830f3705501acc91");
+        param.put("client_secret", "969a7a02b0d327feebdaa6be42c50f7783b602b1");
+        param.put("redirect_uri", "Latkes.getServePath() +\"/githubLoginCallback\"");
+        param.put("state", "3");
+        RequestBody loginBody =
+                RequestBody.create(JSON, new Gson().toJson(param));
+        String token = null;
+        try (okhttp3.Response res = HttpUtils.httpPost("https://github.com/login/oauth/access_token", loginBody)) {
+            String resstring = res.body().string();
+            token = resstring.split("&")[0]
+                    .split("=")[1];
+            LOGGER.info("token => " + token);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        OkHttpClient client = new OkHttpClient();
+        okhttp3.Request req = new okhttp3.Request.Builder()
+                .url("https://api.github.com/user?access_token=" + token)
+                .build();
+        Map<String, Object> map = Maps.newHashMap();
+        try{
+            okhttp3.Response res2 = client.newCall(req).execute();
+            String res = res2.body().string();
+            LOGGER.warn("用户登陆信息:" + res);
+            if (res == null || res.equals("")) {
+                context.sendRedirect(Latkes.getServePath());
+                LOGGER.warn("没有拿到用户登陆信息:" + res);
+                return;
+            }
+            Gson gson = new Gson();
+            map = gson.fromJson(res, Map.class);
+        } catch (IOException e) {
+            e.printStackTrace();
             return;
         }
-        Gson gson = new Gson();
-        Map<String, Object> map = gson.fromJson(userJson, Map.class);
+
+        //String ret = HttpUtils.sendPost("https://github.com/login/oauth/access_token?client_id=603d830f3705501acc91&client_secret=969a7a02b0d327feebdaa6be42c50f7783b602b1&code=" + code + "&redirect_uri=" + Latkes.getServePath() +"/githubLoginCallback", null);
+        //String token = ret.split("&")[0];
+///{"login":"cbamls","id":12781382,"node_id":"MDQ6VXNlcjEyNzgxMzgy","avatar_url":"https://avatars1.githubusercontent.com/u/12781382?v=4","gravatar_id":"","url":"https://api.github.com/users/cbamls","html_url":"https://github.com/cbamls","followers_url":"https://api.github.com/users/cbamls/followers","following_url":"https://api.github.com/users/cbamls/following{/other_user}","gists_url":"https://api.github.com/users/cbamls/gists{/gist_id}","starred_url":"https://api.github.com/users/cbamls/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/cbamls/subscriptions","organizations_url":"https://api.github.com/users/cbamls/orgs","repos_url":"https://api.github.com/users/cbamls/repos","events_url":"https://api.github.com/users/cbamls/events{/privacy}","received_events_url":"https://api.github.com/users/cbamls/received_events","type":"User","site_admin":false,"name":"cbamls","company":"北京三块在线科技 ","blog":"www.6aiq.com","location":"望京","email":"88cbam@gmail.com","hireable":null,"bio":"www.liangshu.me","public_repos":50,"public_gists":3,"followers":20,"following":4,"created_at":"2015-06-07T04:39:42Z","updated_at":"2018-12-15T08:58:44Z"}
+       // String userJson = HttpUtils.sendGet("https://api.github.com/user?" + token + "");
+
         String email = map.get("email") == null ? "" : map.get("email").toString();
 
         try {
@@ -270,7 +307,7 @@ public class LoginProcessor {
                     String realGotoUrl = gotoUrl.substring(gotoUrl.indexOf("goto=") + 5);
                     String decodeRealGotoUrl = URLDecoder.decode(realGotoUrl);
                     redirectUrl = decodeRealGotoUrl;
-                } else if(!gotoUrl.contains("github.com")) {
+                } else if (!gotoUrl.contains("github.com")) {
                     redirectUrl = URLDecoder.decode(gotoUrl);
                 }
             }
