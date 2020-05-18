@@ -212,7 +212,7 @@ public class LoginProcessor {
         param.put("code", code);
         param.put("client_id", "603d830f3705501acc91");
         param.put("client_secret", "969a7a02b0d327feebdaa6be42c50f7783b602b1");
-        param.put("redirect_uri", "Latkes.getServePath() +\"/githubLoginCallback\"");
+        param.put("redirect_uri", Latkes.getServePath() +"/githubLoginCallback");
         param.put("state", "3");
         RequestBody loginBody =
                 RequestBody.create(JSON, new Gson().toJson(param));
