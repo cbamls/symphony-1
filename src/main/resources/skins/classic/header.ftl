@@ -44,7 +44,7 @@
             <svg>
                 <use xlink:href="#perfect"></use>
             </svg> ${perfectLabel}</a>
-        <a href="http://md.6aiq.com/" target="_blank">
+        <a href="http://www.md6s.com/" target="_blank">
             <svg>
                 <use xlink:href="#perfect"></use>
             </svg>
