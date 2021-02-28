@@ -31,6 +31,12 @@
         </#if>
         </@head>
         <link rel="stylesheet" href="${staticServePath}/js/lib/compress/article.min.css?${staticResourceVersion}">
+        <style>
+            .bor2 {
+                border: 1px dashed #F00;
+                margin-top: 10px
+            }
+        </style>
         <!-- 由 Google 结构化数据标记助手生成的 JSON-LD 标记。 -->
         <script type="application/ld+json">
             {
@@ -475,10 +481,14 @@
             </div>
         </div>
         <#include "footer.ftl">
+        <div id="fullPage" style="display: none;">
+            <canvas id="canvas" width="1420" height="700"></canvas>
+        </div>
         <div id="thoughtProgressPreview"></div>
         <script src="${staticServePath}/js/lib/compress/article-libs.min.js?${staticResourceVersion}"></script>
         <script src="${staticServePath}/js/m-article${miniPostfix}.js?${staticResourceVersion}"></script>
         <script src="${staticServePath}/js/channel${miniPostfix}.js?${staticResourceVersion}"></script>
+        <script src="${staticServePath}/js/clickImg${miniPostfix}.js?${staticResourceVersion}"></script>
         <script>
             Label.commentErrorLabel = "${commentErrorLabel}";
             Label.symphonyLabel = "${symphonyLabel}";
@@ -534,6 +544,17 @@
             <#if 3 == article.articleType>
                 Article.playThought('${article.articleContent}');
             </#if>
+            //初始化
+            var wxScale = new WxScale({
+                fullPage: document.querySelector("#fullPage"),
+                canvas: document.querySelector("#canvas")
+            });
+            var imgBox = document.querySelectorAll("#img"); //为需要的图片添加放大功能
+            for (var i = 0; i < imgBox.length; i++) {
+                imgBox[i].onclick = function(e) {
+                    wxScale.start(this); //这里的this指向需要放大的这张图片
+                }
+            }
         </script>
     </body>
 </html>
